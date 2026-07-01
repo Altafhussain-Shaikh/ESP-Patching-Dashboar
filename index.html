@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patching Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="home" id="home">
+    <header class="home-header">
+      <h1>Patching Dashboard Hub</h1>
+      <p>Select a section to load it in this same view.</p>
+    </header>
+
+    <section class="option-grid" id="optionGrid" aria-label="Patching Options">
+
+      <button class="option" data-target="os" type="button">
+        <span class="card-art" aria-hidden="true">
+          <svg viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="8" width="72" height="16" rx="4" fill="#3b4a7a" stroke="#6f7cff" stroke-width="1.5"/>
+            <circle cx="16" cy="16" r="3" fill="#6f7cff"/>
+            <rect x="26" y="13" width="28" height="4" rx="2" fill="#5a6898"/>
+            <rect x="60" y="13" width="8" height="4" rx="2" fill="#25c565"/>
+            <rect x="4" y="30" width="72" height="16" rx="4" fill="#3b4a7a" stroke="#6f7cff" stroke-width="1.5"/>
+            <circle cx="16" cy="38" r="3" fill="#6f7cff"/>
+            <rect x="26" y="35" width="20" height="4" rx="2" fill="#5a6898"/>
+            <rect x="60" y="35" width="8" height="4" rx="2" fill="#25c565"/>
+            <rect x="4" y="52" width="72" height="5" rx="2" fill="#2a3354" stroke="#3d4e82" stroke-width="1"/>
+            <rect x="10" y="53.5" width="12" height="2" rx="1" fill="#5567b0"/>
+          </svg>
+        </span>
+        <span class="card-label">OS Patching</span>
+        <span class="card-badge live">Live</span>
+        <span class="card-desc">Monitor OS patch compliance across all managed servers.</span>
+      </button>
+
+      <button class="option" data-target="db" type="button">
+        <span class="card-art" aria-hidden="true">
+          <svg viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="40" cy="14" rx="28" ry="8" fill="#3b4a7a" stroke="#39b8ff" stroke-width="1.5"/>
+            <path d="M12 14 v12 c0 4.4 12.5 8 28 8s28-3.6 28-8V14" fill="#2a3557" stroke="#39b8ff" stroke-width="1.5"/>
+            <path d="M12 26 v12 c0 4.4 12.5 8 28 8s28-3.6 28-8V26" fill="#232c4a" stroke="#39b8ff" stroke-width="1.5"/>
+            <ellipse cx="40" cy="38" rx="28" ry="8" fill="#2a3557" stroke="#39b8ff" stroke-width="1.5"/>
+            <rect x="34" y="10" width="12" height="4" rx="2" fill="#39b8ff" opacity="0.6"/>
+          </svg>
+        </span>
+        <span class="card-label">DB Patching</span>
+        <span class="card-badge live">Live</span>
+        <span class="card-desc">Track database patch status and version compliance.</span>
+      </button>
+
+      <button class="option" data-target="mw" type="button">
+        <span class="card-art" aria-hidden="true">
+          <svg viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="20" width="18" height="18" rx="4" fill="#3b4a7a" stroke="#dfbc4d" stroke-width="1.5"/>
+            <rect x="56" y="20" width="18" height="18" rx="4" fill="#3b4a7a" stroke="#dfbc4d" stroke-width="1.5"/>
+            <rect x="31" y="26" width="18" height="6" rx="3" fill="#3b4a7a" stroke="#dfbc4d" stroke-width="1.5"/>
+            <line x1="24" y1="29" x2="31" y2="29" stroke="#dfbc4d" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <line x1="49" y1="29" x2="56" y2="29" stroke="#dfbc4d" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <circle cx="15" cy="29" r="3" fill="#dfbc4d" opacity="0.7"/>
+            <circle cx="65" cy="29" r="3" fill="#dfbc4d" opacity="0.7"/>
+            <circle cx="40" cy="29" r="2.5" fill="#dfbc4d"/>
+          </svg>
+        </span>
+        <span class="card-label">Middleware Patching</span>
+        <span class="card-badge upcoming">Upcoming</span>
+        <span class="card-desc">Middleware layer patching coverage — coming soon.</span>
+      </button>
+
+      <button class="option" data-target="onprem" type="button">
+        <span class="card-art" aria-hidden="true">
+          <svg viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="28" width="64" height="26" rx="3" fill="#2a3354" stroke="#ff5a75" stroke-width="1.5"/>
+            <path d="M20 28 L40 10 L60 28" fill="#3b4a7a" stroke="#ff5a75" stroke-width="1.5" stroke-linejoin="round"/>
+            <rect x="32" y="38" width="16" height="14" rx="2" fill="#3b4a7a" stroke="#ff5a75" stroke-width="1"/>
+            <rect x="14" y="35" width="10" height="8" rx="2" fill="#3b4a7a" stroke="#ff5a75" stroke-width="1"/>
+            <rect x="56" y="35" width="10" height="8" rx="2" fill="#3b4a7a" stroke="#ff5a75" stroke-width="1"/>
+            <circle cx="40" cy="16" r="3" fill="#ff5a75" opacity="0.7"/>
+          </svg>
+        </span>
+        <span class="card-label">OnPrem Patching</span>
+        <span class="card-badge upcoming">Upcoming</span>
+        <span class="card-desc">On-premises infrastructure patching insights — coming soon.</span>
+      </button>
+
+    </section>
+
+    <section class="viewer" id="viewer" aria-live="polite" hidden>
+      <div class="viewer-head">
+        <button id="backHome" type="button" class="back-btn">&#8592; Home</button>
+        <h2 id="viewerTitle">OS Patching</h2>
+        <a id="openExternal" href="#">Open report</a>
+      </div>
+
+      <iframe
+        id="reportFrame"
+        title="Patching report"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+
+      <article id="upcomingNotice" class="upcoming-notice" hidden>
+        <span class="notice-icon">🚧</span>
+        <h3>Coming Soon</h3>
+        <p>This dashboard is under development and will be available soon. Stay tuned!</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
