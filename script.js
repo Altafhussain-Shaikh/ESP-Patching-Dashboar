@@ -1,12 +1,12 @@
 const REPORTS = {
   os: {
     title: 'OS Patching',
-    url: 'https://app.powerbi.com/groups/me/apps/f80c0f16-07c7-4751-a873-b4110472bff5/reports/4f056a09-d7b8-4287-855e-51d3c85c5866/748a3440c5f14d03f83c?experience=power-bi',
+    url: 'https://app.powerbi.com/reportEmbed?reportId=4f056a09-d7b8-4287-855e-51d3c85c5866&pageName=748a3440c5f14d03f83c&autoAuth=true&ctid=8ac76c91-e7f1-41ff-a89c-3553b2da2c17',
     isUpcoming: false
   },
   db: {
     title: 'DB Patching',
-    url: 'https://app.powerbi.com/groups/me/apps/f80c0f16-07c7-4751-a873-b4110472bff5/reports/4f056a09-d7b8-4287-855e-51d3c85c5866/ecd9992ee78250a1d070?experience=power-bi',
+    url: 'https://app.powerbi.com/reportEmbed?reportId=4f056a09-d7b8-4287-855e-51d3c85c5866&pageName=ecd9992ee78250a1d070&autoAuth=true&ctid=8ac76c91-e7f1-41ff-a89c-3553b2da2c17',
     isUpcoming: false
   },
   mw: {
@@ -16,8 +16,8 @@ const REPORTS = {
   },
   onprem: {
     title: 'OnPrem Patching',
-    url: '',
-    isUpcoming: true
+    url: 'https://app.powerbi.com/reportEmbed?reportId=addc07f0-7de7-4f10-9cae-2bf1f2bb3359&groupId=c623c66e-42ab-4f26-b309-507acf733cb8&autoAuth=true&ctid=8ac76c91-e7f1-41ff-a89c-3553b2da2c17',
+    isUpcoming: false
   }
 };
 

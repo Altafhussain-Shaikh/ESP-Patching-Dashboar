@@ -11,12 +11,23 @@
 </head>
 <body>
   <main class="home" id="home">
-    <header class="home-header">
-      <h1>Patching Dashboard Hub</h1>
-      <p>Select a section to load it in this same view.</p>
-    </header>
+    <section class="ops-nav" aria-label="Operation Navigation">
+      <p class="ops-nav-title">ESP Operation View</p>
+      <ul class="ops-nav-list">
+        <li class="ops-nav-item">OpsInsights - TechDebt</li>
+        <li class="ops-nav-item ops-nav-item-active">OpsGuard - Patching</li>
+        <li class="ops-nav-item">OpsWatch - Synthetic Monitoring</li>
+        <li class="ops-nav-item">OpsManage - Cloud Native</li>
+      </ul>
+    </section>
 
-    <section class="option-grid" id="optionGrid" aria-label="Patching Options">
+    <section class="home-main">
+      <header class="home-header">
+        <h1>Patching Dashboard Hub</h1>
+        <p>Select a section to load it in this same view.</p>
+      </header>
+
+      <section class="option-grid" id="optionGrid" aria-label="Patching Options">
 
       <button class="option" data-target="os" type="button">
         <span class="card-art" aria-hidden="true">
@@ -53,6 +64,22 @@
         <span class="card-desc">Track database patch status and version compliance.</span>
       </button>
 
+      <button class="option" data-target="onprem" type="button">
+        <span class="card-art" aria-hidden="true">
+          <svg viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="28" width="64" height="26" rx="3" fill="#2a3354" stroke="#ff5a75" stroke-width="1.5"/>
+            <path d="M20 28 L40 10 L60 28" fill="#3b4a7a" stroke="#ff5a75" stroke-width="1.5" stroke-linejoin="round"/>
+            <rect x="32" y="38" width="16" height="14" rx="2" fill="#3b4a7a" stroke="#ff5a75" stroke-width="1"/>
+            <rect x="14" y="35" width="10" height="8" rx="2" fill="#3b4a7a" stroke="#ff5a75" stroke-width="1"/>
+            <rect x="56" y="35" width="10" height="8" rx="2" fill="#3b4a7a" stroke="#ff5a75" stroke-width="1"/>
+            <circle cx="40" cy="16" r="3" fill="#ff5a75" opacity="0.7"/>
+          </svg>
+        </span>
+        <span class="card-label">OnPrem Patching</span>
+        <span class="card-badge live">Live</span>
+        <span class="card-desc">Track on-premises infrastructure patching in Power BI.</span>
+      </button>
+
       <button class="option" data-target="mw" type="button">
         <span class="card-art" aria-hidden="true">
           <svg viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,46 +95,36 @@
         </span>
         <span class="card-label">Middleware Patching</span>
         <span class="card-badge upcoming">Upcoming</span>
-        <span class="card-desc">Middleware layer patching coverage — coming soon.</span>
+        <span class="card-desc">Middleware layer patching coverage - coming soon.</span>
       </button>
 
-      <button class="option" data-target="onprem" type="button">
-        <span class="card-art" aria-hidden="true">
-          <svg viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="28" width="64" height="26" rx="3" fill="#2a3354" stroke="#ff5a75" stroke-width="1.5"/>
-            <path d="M20 28 L40 10 L60 28" fill="#3b4a7a" stroke="#ff5a75" stroke-width="1.5" stroke-linejoin="round"/>
-            <rect x="32" y="38" width="16" height="14" rx="2" fill="#3b4a7a" stroke="#ff5a75" stroke-width="1"/>
-            <rect x="14" y="35" width="10" height="8" rx="2" fill="#3b4a7a" stroke="#ff5a75" stroke-width="1"/>
-            <rect x="56" y="35" width="10" height="8" rx="2" fill="#3b4a7a" stroke="#ff5a75" stroke-width="1"/>
-            <circle cx="40" cy="16" r="3" fill="#ff5a75" opacity="0.7"/>
-          </svg>
-        </span>
-        <span class="card-label">OnPrem Patching</span>
-        <span class="card-badge upcoming">Upcoming</span>
-        <span class="card-desc">On-premises infrastructure patching insights — coming soon.</span>
-      </button>
+      </section>
 
-    </section>
+      <section class="viewer" id="viewer" aria-live="polite" hidden>
+        <div class="viewer-head">
+          <button id="backHome" type="button" class="back-btn">&#8592; Home</button>
+          <h2 id="viewerTitle">OS Patching</h2>
+          <a id="openExternal" href="#">Open report</a>
+        </div>
 
-    <section class="viewer" id="viewer" aria-live="polite" hidden>
-      <div class="viewer-head">
-        <button id="backHome" type="button" class="back-btn">&#8592; Home</button>
-        <h2 id="viewerTitle">OS Patching</h2>
-        <a id="openExternal" href="#">Open report</a>
-      </div>
+        <iframe
+          id="reportFrame"
+          title="ESP Patching Dashboard-PROD"
+          width="1140"
+          height="541.25"
+          src="https://app.powerbi.com/reportEmbed?reportId=4f056a09-d7b8-4287-855e-51d3c85c5866&autoAuth=true&ctid=8ac76c91-e7f1-41ff-a89c-3553b2da2c17"
+          frameborder="0"
+          allowfullscreen="true"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
 
-      <iframe
-        id="reportFrame"
-        title="Patching report"
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-      ></iframe>
-
-      <article id="upcomingNotice" class="upcoming-notice" hidden>
-        <span class="notice-icon">🚧</span>
-        <h3>Coming Soon</h3>
-        <p>This dashboard is under development and will be available soon. Stay tuned!</p>
-      </article>
+        <article id="upcomingNotice" class="upcoming-notice" hidden>
+          <span class="notice-icon">🚧</span>
+          <h3>Coming Soon</h3>
+          <p>This dashboard is under development and will be available soon. Stay tuned!</p>
+        </article>
+      </section>
     </section>
   </main>
 

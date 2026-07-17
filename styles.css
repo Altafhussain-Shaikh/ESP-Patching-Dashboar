@@ -27,9 +27,20 @@ body {
 }
 
 .home {
-  width: min(1280px, 94vw);
-  margin: 0 auto;
-  padding: 36px 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 0;
+  align-items: start;
+}
+
+.home-main {
+  min-width: 0;
+  padding: 18px;
 }
 
 .home-header {
@@ -46,6 +57,49 @@ body {
 .home-header p {
   margin: 8px 0 0;
   color: var(--muted);
+}
+
+.ops-nav {
+  margin: 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  border-right: 1px solid var(--line);
+  border-radius: 0;
+  background: linear-gradient(180deg, rgba(22, 27, 44, 0.98), rgba(16, 20, 34, 0.98));
+  overflow: hidden;
+}
+
+.ops-nav-title {
+  margin: 0;
+  padding: 16px 14px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.ops-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+}
+
+.ops-nav-item {
+  padding: 9px 10px;
+  border-radius: 8px;
+  color: #d3dbf3;
+  font-size: 0.93rem;
+}
+
+.ops-nav-item + .ops-nav-item {
+  margin-top: 4px;
+}
+
+.ops-nav-item-active {
+  background: rgba(85, 99, 255, 0.24);
+  color: #ffffff;
+  font-weight: 700;
 }
 
 /* ── Landing state: 2×2 rich cards ───────────────────── */
@@ -132,7 +186,16 @@ body {
 
 /* ── Launched state: 4 compact tabs at top ───────────── */
 .home.is-launched {
-  padding-top: 14px;
+  padding-top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home.is-launched .home-main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px 12px;
 }
 
 .home.is-launched .home-header {
@@ -150,6 +213,7 @@ body {
   border-radius: 12px;
   padding: 8px;
   backdrop-filter: blur(6px);
+  flex: 0 0 auto;
 }
 
 .home.is-launched .option {
@@ -181,6 +245,14 @@ body {
   background: rgba(24, 29, 45, 0.88);
   min-height: 70vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.home.is-launched .viewer {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-top: 10px;
 }
 
 .viewer-head {
@@ -224,18 +296,21 @@ body {
 #reportFrame {
   display: block;
   width: 100%;
-  height: calc(70vh - 56px);
   border: 0;
   background: #0b0f1e;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
 }
 
 .upcoming-notice {
   display: grid;
   place-content: center;
   text-align: center;
-  min-height: calc(70vh - 56px);
+  min-height: 0;
   padding: 40px 24px;
   background: radial-gradient(circle at 50% 40%, rgba(223,188,77,0.07) 0, transparent 65%);
+  flex: 1 1 auto;
 }
 
 .upcoming-notice .notice-icon {
@@ -262,17 +337,36 @@ body {
 
 @media (max-width: 960px) {
   .home {
-    width: min(1280px, 96vw);
+    grid-template-columns: 1fr;
+  }
+
+  .home.is-launched {
+    height: auto;
+    overflow: visible;
+  }
+
+  .home.is-launched .home-main {
+    height: auto;
+    padding: 14px;
+  }
+
+  .ops-nav {
+    position: static;
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .home-main {
+    padding: 14px;
   }
 
   .home.is-launched .option-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  #reportFrame,
-  .upcoming-notice {
+  .home.is-launched .viewer {
     min-height: 60vh;
-    height: 60vh;
   }
 }
 
